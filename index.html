@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IMPORT CSS & REM -->
+    <link rel="stylesheet" href="./less/reset.min.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="./less/index.css">
+    <script>
+    ; (function () {
+        //resize：当浏览器窗口大小发生变化时
+        //onorientationchange：横竖屏切换，其宽高相应改变
+        let evt = 'onorientationchange' in window ? 'onorientationchange':'resize';
+        //重新计算比例只是为了向下兼容屏幕更小的设备。
+        function computed() {
+            let HTML = document.documentElement,
+                deviceW = HTML.clientWidth,  //设备宽度
+                desginW = 750, //设计稿宽度
+                ratio = deviceW/ desginW  * 100;  //在不同设备中的比例
+            //如果设备的宽度 大于设计稿的宽度就让比例保持原来的不变
+            ratio = deviceW > desginW ? 100 : ratio;
+
+            //改变html根元素的font-size
+            HTML.style.fontSize = ratio + 'px';
+
+        }
+        computed()
+        window.addEventListener(evt,computed);
+    })();
+    </script>
+        <script src="./node_modules/prefixfree/prefixfree.min.js"></script>  <!-- //做兼容 -->
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 主体 -->
+    <main class="container">
+
+
+        <!-- 滑屏区域 -->
+        <section class="swiperBox">
+            <div class="back">
+                <a href="javascrpit:;">返回</a>
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide page0" >
+                        <dl class="baseInfo ">
+                            <dt>自我介绍</dt>
+                            <dd><em>01</em>
+                                <span>姓名:jucky</span></dd>
+                            <dd><em>02</em><span>性别：男</span></dd>
+                            <dd><em>03</em><span>政治面貌：党员</span></dd>
+                            <dd><em>04</em><span>毕业院校：华东交通大学</span></dd>
+                            <dd><em>05</em><span>籍贯：江西上饶</span></dd>
+                            <dd><em>06</em><span>工作年限：0</span></dd>
+                            <dd><em>07</em><span>擅长：js(es6),ajax,vue,react,node,小程序</span></dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-slide page1">
+                        <h1>个人经历</h1>
+                        
+                        <div class="content">帅</div>
+                        <div class="content">孝</div>
+                        <div class="content">钱</div>
+                        <div class="content">善</div>
+                        <div class="content">礼</div>
+                        <div class="content">诚</div>
+                        <div class="content">Jucky</div>
+                    </div>
+                    <div class="swiper-slide page2">Slide 3</div>
+                    <div class="swiper-slide page3">Slide 4</div>
+                    <div class="swiper-slide page4">Slide 5</div>
+                    <div class="swiper-slide page5">Slide 6</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 魔方区域 -->
+        <section class="cubeBox">
+            <!-- ul.cube>li*6>img[src="./img/cube/cube-$.jpg"] -->
+            <ul class="cube">
+                <li data-index="0"><img src="./img/cube/cube-1.jpg" alt=""></li>
+                <li data-index="1"><img src="./img/cube/cube-2.jpg" alt=""></li>
+                <li data-index="2"><img src="./img/cube/cube-3.jpg" alt=""></li>
+                <li data-index="3"><img src="./img/cube/cube-4.jpg" alt=""></li>
+                <li data-index="4"><img src="./img/cube/cube-5.jpg" alt=""></li>
+                <li data-index="5"><img src="./img/cube/cube-6.jpg" alt=""></li>
+            </ul>
+            <figure class=".figure">
+                魔方可旋转可点击哦
+            </figure>
+        </section>
+
+
+        <!-- 音乐区域 -->
+        <section class="musicBox">
+            <!-- audio支持的格式：mp3 oog wav m3u8直播流 -->
+            <audio src=""></audio>
+        </section>
+    </main>
+    <!-- IMPORT JS -->
+   
+
+    <script src="./node_modules/zepto/dist/zepto.min.js"></script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="./node_modules/zepto/src/touch.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+html {
+  font-size: 100px;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+@keyframes backInRight {
+  0% {
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0) scaleX(3);
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0) scaleX(1);
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0) scaleX(0.995);
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes shakeX {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0) rotate(10deg);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0) rotate(-10deg);
+  }
+}
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+/* 基础样式 */
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: aqua;
+  height: 100%;
+  /* ---------------页面------------- */
+  /* ---------------魔方区域-------------- */
+}
+.container .cubeBox,
+.container .swiperBox {
+  height: 100%;
+  display: none;
+}
+.container .swiperBox .back {
+  width: 0.5rem;
+  height: auto;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  z-index: 99;
+  display: none;
+}
+.container .swiperBox .swiper {
+  height: 100%;
+  position: relative;
+  /* 第一页 */
+  /* 第二页 */
+  /* 第三页 */
+  /* 第四页 */
+  /* 第五页 */
+  /* 第六页 */
+}
+.container .swiperBox .swiper .page0 {
+  background-color: #FFF;
+}
+.container .swiperBox .swiper .page0 .baseInfo {
+  width: 80%;
+  height: auto;
+  margin: 20% auto;
+  box-sizing: border-box;
+  background-color: #c75be6;
+  opacity: 0;
+}
+.container .swiperBox .swiper .page0 .baseInfo dt {
+  line-height: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+.container .swiperBox .swiper .page0 .baseInfo dd {
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 34px;
+  font-size: 16px;
+  border-top: 1px dashed white;
+  padding: 0 10px;
+  background-color: #c75be6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .swiperBox .swiper .page0 .baseInfo dd em {
+  border-radius: 0.4rem;
+  margin-right: 6px;
+  background-color: #FAC471;
+  padding: 2px;
+}
+.container .swiperBox .swiper .page0 .baseInfo dd span {
+  z-index: 10;
+}
+.container .swiperBox .swiper #page0 .baseInfo {
+  animation: backInRight 1s both;
+}
+.container .swiperBox .swiper .page1 {
+  background-color: #FF9c14;
+}
+.container .swiperBox .swiper .page1 h1 {
+  text-align: center;
+  line-height: 1rem;
+  font-weight: normal;
+  padding-top: 0.5rem;
+  opacity: 0;
+}
+.container .swiperBox .swiper .page1 .content {
+  width: 1rem;
+  height: 1rem;
+  background-color: #FbFFE8;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.5rem;
+  margin-left: -0.5rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 20px;
+  opacity: 0;
+}
+.container .swiperBox .swiper .page1 .content:nth-of-type(7) {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.75rem;
+  margin-left: -0.75rem;
+  line-height: 1.5rem;
+}
+.container .swiperBox .swiper #page1 h1 {
+  animation: bounceInLeft 1s both;
+}
+.container .swiperBox .swiper #page1 .content {
+  animation: tada 1s 1s infinite both;
+  opacity: 1;
+}
+.container .swiperBox .swiper #page1 .content:nth-of-type(7) {
+  animation: shakeX 1s both;
+}
+.container .swiperBox .swiper #page1 .content:nth-of-type(1) {
+  margin-top: -2.9rem;
+  transition: 1s 1s;
+}
+.container .swiperBox .swiper #page1 .content:nth-of-type(2) {
+  margin-top: -1.7rem;
+  margin-left: -2.5rem;
+  transition: 1s 2s;
+}
+.container .swiperBox .swiper #page1 .content:nth-of-type(3) {
+  margin-top: 0.7rem;
+  margin-left: -2.5rem;
+  transition: 1s 3s;
+}
+.container .swiperBox .swiper #page1 .content:nth-of-type(4) {
+  margin-top: -1.7rem;
+  margin-left: 1.5rem;
+  transition: 1s 4s;
+}
+.container .swiperBox .swiper #page1 .content:nth-of-type(5) {
+  margin-top: 0.7rem;
+  margin-left: 1.5rem;
+  transition: 1s 5s;
+}
+.container .swiperBox .swiper #page1 .content:nth-of-type(6) {
+  margin-top: 1.9rem;
+  transition: 1s 6s;
+}
+.container .swiperBox .swiper .page2 {
+  background-color: #e45454;
+}
+.container .swiperBox .swiper .page3 {
+  background-color: #FAC471;
+}
+.container .swiperBox .swiper .page4 {
+  background-color: #FbFFE8;
+}
+.container .swiperBox .swiper .page5 {
+  background-color: #5975FF;
+}
+.container .cubeBox {
+  background: url('../img/background/OIP-C.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  perspective: 2000px;
+  /* 魔方盒子 */
+  /* 提示文字 */
+}
+.container .cubeBox .cube {
+  width: 5.1rem;
+  height: 5.1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2.55rem;
+  margin-left: -2.55rem;
+  background-color: gold;
+  transform-style: preserve-3d;
+  transform: scale(0.6) rotateX(-30deg) rotateY(45deg);
+  transition: transform 0.3s linear;
+}
+.container .cubeBox .cube li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container .cubeBox .cube li img {
+  width: 100%;
+  height: 100%;
+}
+.container .cubeBox .cube li:nth-of-type(1) {
+  transform: translateZ(2.55rem);
+}
+.container .cubeBox .cube li:nth-of-type(2) {
+  transform: translateZ(-2.55rem) rotateY(180deg);
+}
+.container .cubeBox .cube li:nth-of-type(3) {
+  transform: translateY(2.55rem) rotateX(-90deg);
+}
+.container .cubeBox .cube li:nth-of-type(4) {
+  transform: translateY(-2.55rem) rotateX(90deg);
+}
+.container .cubeBox .cube li:nth-of-type(5) {
+  transform: translateX(2.55rem) rotateY(90deg);
+}
+.container .cubeBox .cube li:nth-of-type(6) {
+  transform: translateX(-2.55rem) rotateY(-90deg);
+}
+.container .cubeBox figure {
+  position: absolute;
+  left: 50%;
+  margin-left: -1.97rem;
+  width: 3.94rem;
+  height: 0.44rem;
+  background-color: rgba(7, 7, 150, 0.6);
+  line-height: 0.44rem;
+  text-align: center;
+  font-size: 0.2rem;
+  color: white;
+  bottom: 0.44rem;
+}
+.container .cubeBox figure::before {
+  content: "小提示：";
+}
